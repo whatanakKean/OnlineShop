@@ -17,8 +17,9 @@ return new class extends Migration
             $table->id();
             $table->integer("u_id");
             $table->integer("b_id");
-            $table->inteter("v_id");
+            $table->integer("v_id");
             $table->timestamps();
+
         });
     }
 
@@ -29,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('orders');
+        //
     }
 };

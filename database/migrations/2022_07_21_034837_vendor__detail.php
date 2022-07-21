@@ -13,14 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('users__details', function (Blueprint $table) {
+        Schema::create('vendor__detail', function (Blueprint $table) {
             $table->id();
-            $table->integer("u_id");
             $table->string("name");
             $table->string("tel");
             $table->string("address");
             $table->string("email");
-            $table->timestamps("joined_date");
+            $table->timestamps();
         });
     }
 
@@ -31,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users__details');
+        //
     }
 };
