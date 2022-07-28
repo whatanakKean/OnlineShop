@@ -1,8 +1,7 @@
 <?php
-
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\HomeController;
-use App\Http\Controllers\UsersAccountController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,17 +12,3 @@ use App\Http\Controllers\UsersAccountController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', function () {
-    return view('home');
-});
-
-
-Route::match(['get', 'post'], '/page1', function () {
-    return view('page1');
-})->name("page1");
-
-
-Route::get('home/{userName}', [HomeController::class, "index"])->name("home");
-
-Route::get("/user", [UsersAccountController::class, 'index']);

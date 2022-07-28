@@ -13,12 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('vendor__detail', function (Blueprint $table) {
+        Schema::create('books', function (Blueprint $table) {
             $table->id();
+            $table->integer("vendor_id");
             $table->string("name");
-            $table->string("tel");
-            $table->string("address");
-            $table->string("email");
+            $table->string("category");
+            $table->string("img");
+            $table->double("price");
+            $table->double("quantity");
             $table->timestamps();
         });
     }
@@ -30,6 +32,6 @@ return new class extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('books');
     }
 };

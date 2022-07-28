@@ -13,12 +13,16 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('books__list', function (Blueprint $table) {
+        Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->integer("v_id");
-            $table->string("name");
-            $table->double("price");
-            $table->double("quantity");
+            $table->string('firstname');
+            $table->string('lastname');
+            $table->string('password');
+            $table->string('email')->unique();
+            $table->string('tel');
+            $table->boolean('is_seller')->default(false);
+            $table->timestamp('email_verified_at')->nullable();
+            $table->rememberToken();
             $table->timestamps();
         });
     }
@@ -30,6 +34,6 @@ return new class extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('users');
     }
 };
