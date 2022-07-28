@@ -9,4 +9,8 @@ class Book extends Model
 {
     use HasFactory;
     protected $table = 'books';
+
+    public function vendor(){
+        return $this->belongsTo('App\Models\Vendor');
+    }
 }

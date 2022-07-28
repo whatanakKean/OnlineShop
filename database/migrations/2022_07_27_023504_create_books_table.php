@@ -18,6 +18,9 @@ return new class extends Migration
             $table->integer("vendor_id");
             $table->string("name");
             $table->string("category");
+            $table->string("author");
+            $table->string("description");
+            $table->timestamp("release_date");
             $table->string("img");
             $table->double("price");
             $table->double("quantity");

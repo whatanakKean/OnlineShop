@@ -4,9 +4,8 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use App\Models\User;
-
-class UsersTableSeeder extends Seeder
+use App\Models\Vendor;
+class VendorsTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -15,16 +14,16 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-        User::truncate();
+        Vendor::truncate();
         $faker = \Faker\Factory::create();
 
         for ($i = 0; $i < 10; $i++) {
-            User::create([
-                'firstname' => $faker->name,
-                'lastname' => $faker->name,
-                'password' => $faker->password(8),
-                'email' => $faker->word().'@example.com',
+            Vendor::create([
+                'name' => $faker->name,
+                'img' => $faker->imageUrl(640, 480, 'cats'),
                 'tel' => $faker->phoneNumber,
+                'address' => $faker->address,
+                'email' => $faker->email,
             ]);
         }
     }
