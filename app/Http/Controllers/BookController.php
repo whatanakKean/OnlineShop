@@ -14,7 +14,7 @@ class BookController extends Controller
      */
     public function index()
     {
-
+        return Book::all();
     }
 
     /**
@@ -25,7 +25,17 @@ class BookController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $book = new Book;
+        $book->vendor_id=$request->vendor_id;
+        $book->name=$request->name;
+        $book->category=$request->category;
+        $book->author=$request->author;
+        $book->description=$request->description;
+        $book->release_date=$request->release_date;
+        $book->img=$request->img;
+        $book->price=$request->price;
+        $book->quantity=$request->quantity;
+        $book->save();
     }
 
     /**
@@ -34,20 +44,9 @@ class BookController extends Controller
      * @param  \App\Models\Book  $book
      * @return \Illuminate\Http\Response
      */
-    public function show(Book $book)
+    public function show($id)
     {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Book  $book
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Book $book)
-    {
-        //
+        return Book::find($id);
     }
 
     /**
@@ -57,9 +56,19 @@ class BookController extends Controller
      * @param  \App\Models\Book  $book
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Book $book)
+    public function update(Request $request)
     {
-        //
+        $book = Book::find($request->id);
+        $book->vendor_id=$request->vendor_id;
+        $book->name=$request->name;
+        $book->category=$request->category;
+        $book->author=$request->author;
+        $book->description=$request->description;
+        $book->release_date=$request->release_date;
+        $book->img=$request->img;
+        $book->price=$request->price;
+        $book->quantity=$request->quantity;
+        $book->save();
     }
 
     /**
@@ -68,8 +77,9 @@ class BookController extends Controller
      * @param  \App\Models\Book  $book
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Book $book)
+    public function destroy($id)
     {
-        //
+        $book = Book::find($id);
+        $book->delete();
     }
 }

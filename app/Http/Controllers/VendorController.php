@@ -14,7 +14,7 @@ class VendorController extends Controller
      */
     public function index()
     {
-        //
+        return Vendor::all();
     }
 
     /**
@@ -24,7 +24,7 @@ class VendorController extends Controller
      */
     public function create()
     {
-        //
+        // 
     }
 
     /**
@@ -35,7 +35,14 @@ class VendorController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $vendor = new Vendor;
+        $vendor->user_id=$request->user_id;
+        $vendor->name=$request->name;
+        $vendor->img=$request->img;
+        $vendor->tel=$request->tel;
+        $vendor->address=$request->address;
+        $vendor->email=$request->email;
+        $vendor->save();
     }
 
     /**
@@ -44,9 +51,9 @@ class VendorController extends Controller
      * @param  \App\Models\Vendor  $vendor
      * @return \Illuminate\Http\Response
      */
-    public function show(Vendor $vendor)
+    public function show($id)
     {
-        //
+        return Vendor::find($id);
     }
 
     /**
@@ -69,7 +76,14 @@ class VendorController extends Controller
      */
     public function update(Request $request, Vendor $vendor)
     {
-        //
+        $vendor = Vendor::find($request->id);
+        $vendor->user_id=$request->user_id;
+        $vendor->name=$request->name;
+        $vendor->img=$request->img;
+        $vendor->tel=$request->tel;
+        $vendor->address=$request->address;
+        $vendor->email=$request->email;
+        $vendor->save();
     }
 
     /**
@@ -78,8 +92,9 @@ class VendorController extends Controller
      * @param  \App\Models\Vendor  $vendor
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Vendor $vendor)
+    public function destroy($id)
     {
-        //
+        $vendor = Vendor::find($id);
+        $vendor->delete();
     }
 }

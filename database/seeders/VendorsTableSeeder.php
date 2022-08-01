@@ -24,6 +24,7 @@ class VendorsTableSeeder extends Seeder
                 'tel' => $faker->phoneNumber,
                 'address' => $faker->address,
                 'email' => $faker->email,
+                'user_id' => $faker->numberBetween(1,10),
             ]);
         }
     }
