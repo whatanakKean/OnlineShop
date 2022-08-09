@@ -24,7 +24,14 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        return User::create($request->all());
+        $user = new User;
+        $user->firstname=$request->firstname;
+        $user->lastname=$request->lastname;
+        $user->password=$request->password;
+        $user->email=$request->email;
+        $user->tel=$request->tel;
+        $user->is_seller=$request->is_seller;
+        $user->save();
     }
 
     /**
@@ -45,12 +52,16 @@ class UserController extends Controller
      * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        $user = User::find($id);
-        $user->update($request->all());
-
-        return $user;
+        $user = User::find($request->id);
+        $user->firstname=$request->firstname;
+        $user->lastname=$request->lastname;
+        $user->password=$request->password;
+        $user->email=$request->email;
+        $user->tel=$request->tel;
+        $user->is_seller=$request->is_seller;
+        $user->save();
     }
 
     /**

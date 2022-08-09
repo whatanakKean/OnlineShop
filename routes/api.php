@@ -29,21 +29,21 @@ Route::group(['middleware' => 'auth:sanctum'], function(){
     //for user requests
     Route::get('users', [UserController::class, 'index']);
     Route::get('users/{id}', [UserController::class, 'show']);
-    Route::post('users', [UserController::class, 'store']);
-    Route::put('users/{id}', [UserController::class, 'update']);
-    Route::delete('users/{id}', [UserController::class, 'destroy']);
+    Route::post('users/create', [UserController::class, 'store']);
+    Route::put('users/update/{id}', [UserController::class, 'update']);
+    Route::delete('users/delete/{id}', [UserController::class, 'destroy']);
 
     //for book requests
     Route::get('books', [BookController::class, 'index']);
     Route::get('books/{id}', [BookController::class, 'show']);
-    Route::post('books/store', [BookController::class, 'store']);
+    Route::post('books/create', [BookController::class, 'store']);
     Route::put('books/update/{id}', [BookController::class, 'update']);
     Route::delete('books/delete/{id}', [BookController::class, 'destroy']);
 
     //for vendor requests
     Route::get('vendors', [VendorController::class, 'index']);
     Route::get('vendors/{id}', [VendorController::class, 'show']);
-    Route::post('vendors/store', [VendorController::class, 'store']);
+    Route::post('vendors/create', [VendorController::class, 'store']);
     Route::put('vendors/update/{id}', [VendorController::class, 'update']);
     Route::delete('vendors/delete/{id}', [VendorController::class, 'destroy']);
 
