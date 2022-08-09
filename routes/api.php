@@ -23,23 +23,31 @@ use App\Models\Vendor;
 //     return $request->user();
 // });
 
-//for user requests
-Route::get('users', [UserController::class, 'index']);
-Route::get('users/{id}', [UserController::class, 'show']);
-Route::post('users', [UserController::class, 'store']);
-Route::put('users/{id}', [UserController::class, 'update']);
-Route::delete('users/{id}', [UserController::class, 'destroy']);
+//secure route
+Route::group(['middleware' => 'auth:sanctum'], function(){
 
-//for book requests
-Route::get('books', [BookController::class, 'index']);
-Route::get('books/{id}', [BookController::class, 'show']);
-Route::post('books/store', [BookController::class, 'store']);
-Route::put('books/update', [BookController::class, 'update']);
-Route::delete('books/delete/{id}', [BookController::class, 'destroy']);
+    //for user requests
+    Route::get('users', [UserController::class, 'index']);
+    Route::get('users/{id}', [UserController::class, 'show']);
+    Route::post('users', [UserController::class, 'store']);
+    Route::put('users/{id}', [UserController::class, 'update']);
+    Route::delete('users/{id}', [UserController::class, 'destroy']);
 
-//for vendor requests
-Route::get('vendors', [VendorController::class, 'index']);
-Route::get('vendors/{id}', [VendorController::class, 'show']);
-Route::post('vendors/store', [VendorController::class, 'store']);
-Route::put('vendors/update', [VendorController::class, 'update']);
-Route::delete('vendors/delete/{id}', [VendorController::class, 'destroy']);
+    //for book requests
+    Route::get('books', [BookController::class, 'index']);
+    Route::get('books/{id}', [BookController::class, 'show']);
+    Route::post('books/store', [BookController::class, 'store']);
+    Route::put('books/update/{id}', [BookController::class, 'update']);
+    Route::delete('books/delete/{id}', [BookController::class, 'destroy']);
+
+    //for vendor requests
+    Route::get('vendors', [VendorController::class, 'index']);
+    Route::get('vendors/{id}', [VendorController::class, 'show']);
+    Route::post('vendors/store', [VendorController::class, 'store']);
+    Route::put('vendors/update/{id}', [VendorController::class, 'update']);
+    Route::delete('vendors/delete/{id}', [VendorController::class, 'destroy']);
+
+});
+
+//login to get token
+Route::post("login",[UserController::class, 'login']);

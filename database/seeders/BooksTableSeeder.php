@@ -24,7 +24,7 @@ class BooksTableSeeder extends Seeder
                 'price' => $faker->randomFloat(2, 1, 100),
                 'category' => $faker->word,
                 'author' => $faker->name,
-                'description' => $faker->paragraph,
+                'description' => $faker->name(),
                 'release_date' => $faker->dateTime,
                 'img' => $faker->word,
                 'price' => $faker->randomFloat(2, 1, 100),
