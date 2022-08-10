@@ -10,17 +10,9 @@
 <div class="navbarbox">
   <div class="navbar-wrapper container">
       <h1 class="logo">
-        <a href="/">CADT</a>
+        <a href="/">Bookworm</a>
       </h1>
-      <!-- Search Box -->
-      <div class="searchbox">
-        <span class="material-icons">tune</span>
-        <input type="text" placeholder="What are you looking for..."/>
-        <div class="search-button">
-            <span class="material-icons">search</span>
-        </div>
-      </div>
-      <!-- End Search Box -->
+
       <!-- Cart Box -->
       <a href="/cart" class="navbar-cartbox">
           <span class="material-icons">shopping_cart</span>
@@ -46,4 +38,4 @@
       @endif
       <!-- End Auth or Profile Box -->
     </div>
-</div>   
+</div>

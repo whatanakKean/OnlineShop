@@ -8,14 +8,14 @@ $categoryList = [
 @endphp
 
 <div>
-  <div class="menubar-wrapper container">
-    @foreach($categoryList as $item)
-    <div class="menu-box">
-      <img src="../public/category-icons/{{$item['icon']}}" alt={{ $item['label'] }}>
-      <p class="label">
-          <a href={{ $item['link'] }}>{{ $item['label'] }}</a>
-      </p>
+    <div class="menubar-wrapper container">
+      @foreach($categoryList as $item)
+      <div class="menu-box">
+        <img src="../public/category-icons/{{$item['icon']}}" alt={{ $item['label'] }}>
+        <p class="label">
+            <a href={{ $item['link'] }}>{{ $item['label'] }}</a>
+        </p>
+      </div>
+      @endforeach
     </div>
-    @endforeach
   </div>
-</div>

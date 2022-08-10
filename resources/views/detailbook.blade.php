@@ -8,38 +8,43 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
     rel="stylesheet">
-    <title>Book Detail Page</title>
+    <title>{{$book->name}}</title>
+
 </head>
 <body>
     <!--Navbar-->
-    <x-navbar 
-        :isRegistered="true" 
+    <x-navbar
+        :isRegistered="true"
         profile="https://static.vecteezy.com/system/resources/previews/002/275/847/original/male-avatar-profile-icon-of-smiling-caucasian-man-vector.jpg"
-        name="Rithy Bondeth" 
-        email="rithybondeth999@gmail.com"    
+        name="Rithy Bondeth"
+        email="rithybondeth999@gmail.com"
     />
     <!--End Navbar-->
 
     <div>
         <div class="detail-wrapper container">
             <div class="detail-bookcover">
-                <img src="https://anylang.net/sites/default/files/covers/harry-potter-and-cursed-child.jpg" alt="bookcover">
+                <img src="{{$book->img}}"  alt="bookcover">
             </div>
             <div class="detail-bookcontent">
-                <h2>Harry Potter And The Cursed Child</h2>
-                <p>
-                    Harry Potter and the Cursed Child” is about the journey Albus takes while growing up, 
-                    and the roles he and his best friend, Scorpius (Draco Malfoy son), play when dark forces,
-                    perhaps in league with Voldemort, once again threaten the fate of the planet.
-                </p>
-        
-                <p>Author: JK Rowling</p>
-                <button class="detail-button">Payment</button>
+                <h1>{{$book->name}}</h1>
+                <p>{{$book->description}}</p>
+
+                <p>Category: {{$book->category}}</p>
+                <p>Author: {{$book->author}}</p>
+                <p>Release Data: {{$book->release_date}}</p>
+                <p>Price: {{$book->price}}$</p>
+                <p>Quantity: {{$book->quantity}}</p>
             </div>
         </div>
-        <div class="detial-morewrapper">
-            <x-category title="More Like This"/>
-        </div>
     </div>
+    <div class="container">
+        <p>Want this book?</p>
+        <p>Contact: {{$vendor->name}}</p>
+        <p>Tel: {{$vendor->tel}}</p>
+        <p>Email: {{$vendor->email}}</p>
+        <p>Address: {{$vendor->address}}</p>
+    </div>
+
 </body>
 </html>

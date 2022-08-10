@@ -1,19 +1,23 @@
 @vite(["resources/scss/app.scss", "resources/scss/category.scss"])
 
-@props(["title"])
+
 
 <div class="category-wrapper container">
-  <p class="title">{{ $title }}</p>
+  <p class="title">Book</p>
   <div class="category-row">
-    @foreach([1,2,3,4,5,6,7,8] as $item)
+    @foreach($books as $book)
     <!--- Category Box -->
     <div class="category-box">
-      <div class="bookcover"></div>
+      <div class="bookcover">
+        <a href="{{ route('detailbook', $book->id) }}">
+            <img src="{{$book->img}}" width="200" height="250">
+        </a>
+      </div>
       <div class="bookcontent">
-          <p>Harry Potter</p>
-          <small>Jk Rowling</small>  
+          <p>{{$book->name}}</p>
+          <small>{{$book->author}}</small>
           <div class="contentfooter">
-              <p>Price: 59.99$</p>
+              <p>Price: {{$book->price}}$</p>
               <span class="material-icons">shopping_cart</span>
           </div>
         </div>

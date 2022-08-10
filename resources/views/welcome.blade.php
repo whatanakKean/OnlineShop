@@ -11,27 +11,23 @@
     <title>Product Page</title>
 </head>
 <body>
-    <x-navbar 
-        :isRegistered="true" 
+    <x-navbar
+        :isRegistered="true"
         profile="https://static.vecteezy.com/system/resources/previews/002/275/847/original/male-avatar-profile-icon-of-smiling-caucasian-man-vector.jpg"
-        name="Rithy Bondeth" 
-        email="rithybondeth999@gmail.com"    
+        name="Rithy Bondeth"
+        email="rithybondeth999@gmail.com"
     />
     <!--Slide Box-->
     <x-slide/>
     <!--End Slide Box-->
 
     <!--Banner-->
-    <x-banner context="Welcome to CADT Smart Library, Explore your knowledge here!"/>
+    <x-banner context="Welcome to Bookworm, Explore any book you wish to buy here!"/>
     <!--End Banner-->
 
-    <!---MenuBar-->
-    <x-menubar/>
-    <!--End MenuBar-->
-
     <!-- Category -->
-    <x-category title="Popular"/>
-    <x-category title="Romance"/>
+    @component('components.category', ['books' => $books ] )
+    @endcomponent
     <!--- End Category -->
 </body>
 </html>
