@@ -1,0 +1,74 @@
+.wrapper {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    background-color: #15284A;
+}
+.container {
+    width: 50vw;
+    display: flex;
+    border-radius: 20px;
+    padding: 30px;
+    background-color: white;   
+}
+.imagebox {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.loginbox {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    h2 {
+        font-size: 25px;
+        font-family: 'Russo One', sans-serif;
+        color: #15284A;
+    }
+}
+.signup_text {
+    margin: 20px 0px;
+    display: flex;
+    align-items: center;
+    &>a {
+        margin: 0px 5px;
+        color: #15284A;
+    }
+}
+.mybutton {
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    background-color: #15284A;
+    color: white;
+    &:hover {
+        opacity: 0.8;
+        transition: 0.25s;
+        transform: scale(1.05);
+    }
+    &:not(:hover) {
+        transition: 0.25s;
+    }
+}
+.textfield {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    padding: 5px 10px;
+    border-radius: 10px;
+    background-color: #EEE;
+    &>span { color: #15284A }
+    &>input {
+        background-color: transparent;
+        min-height: 40px;
+        min-width: 400px;
+        border: none;
+        outline: none;
+        padding-left: 10px;
+    }
+}

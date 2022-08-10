@@ -1,0 +1,104 @@
+.navbarbox {
+    background-color: #15284A;
+    color: white;
+    padding: 15px;
+}
+.logo {
+    font-family: 'Russo One', sans-serif;
+    cursor: pointer;
+    &>a {
+        text-decoration: none;
+        color: white;
+    }
+}
+.navbar-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.navbar-cartbox {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+    color: white;
+    text-decoration: none;
+    &>div {
+        height: 18px;
+        width: 18px;
+        font-size: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: -10px;
+        right: -10px;
+        border-radius: 50%;
+        background-color: red;
+    }
+}
+.searchbox {
+    position: relative;
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    background-color: white;
+    &>span { 
+        color: #15284A;
+        padding: 10px;
+        cursor: pointer;
+    }
+    &>input[type="text"] {
+        width: 30vw;
+        padding: 10px;
+        border: none;
+        outline: none;
+        background-color: transparent;
+    }
+}
+.search-button {
+    width: 55px;
+    height: 55px;
+    position: absolute;
+    right: -20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: #36B5E4;
+    cursor: pointer;
+}
+.authbox {
+    display: flex;
+    align-items: center;
+    &>div {
+        padding: 0px 5px;
+        text-transform: uppercase;
+    }
+    &>button {
+        border: none;
+        color: white;
+        background-color: #36B5E4;
+        padding: 10px 20px;
+        margin: 0px 5px;
+        border-radius: 10px;
+        cursor: pointer;
+    }
+}
+.profilebox {
+    display: flex;
+    align-items: center;
+}
+.profile-image {
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    cursor: pointer;
+}
+.profile-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 10px;
+    &>small { padding-top: 5px }
+}

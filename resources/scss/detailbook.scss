@@ -1,0 +1,36 @@
+.detail-wrapper {
+    display: flex;
+    align-items: center;
+    height: 60vh;
+    margin: 10px auto;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #EEE;
+}
+.detail-bookcover {
+    flex: 1;
+    height: 100%;
+    padding: 20px;
+    &>img {
+        height: 100%;
+        width: 100%;
+    }
+}
+.detail-bookcontent {
+    flex: 2;
+    height: 100%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    &>p { padding: 10px 0px }
+}
+.detail-button {
+    border: none;
+    width: fit-content;
+    margin: 10px 0px;
+    padding: 10px 15px;
+    border-radius: 5px;
+    color: white;
+    background-color: #15284A;
+    cursor: pointer;
+}

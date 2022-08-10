@@ -1,0 +1,29 @@
+.menubar-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+.menu-box {
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    margin: 5px 10px 5px 0px;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: #EEE;
+    &:hover {
+        transition: 0.25s;
+        transform: scale(1.1);
+    }
+    &:not(:hover) {
+        transition: 0.25s;
+    }
+}
+.label {
+    margin: 0px 10px;
+    &>a {
+        color: black;
+        text-decoration: none;
+    }
+}
