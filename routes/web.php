@@ -15,8 +15,10 @@ use App\Models\Vendor;
 |
 */
 
-
 Route::get('/', function () {
+    return redirect('/auth/login');
+});
+Route::get('/home', function () {
     return view('welcome', ['books' => Book::all()]);
 });
 

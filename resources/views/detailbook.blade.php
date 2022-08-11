@@ -39,11 +39,12 @@
         </div>
     </div>
     <div class="container">
-        <p>Want this book?</p>
-        <p>Contact: {{$vendor->name}}</p>
-        <p>Tel: {{$vendor->tel}}</p>
-        <p>Email: {{$vendor->email}}</p>
-        <p>Address: {{$vendor->address}}</p>
+        <h2>Want this book?</h2>
+        <br>
+        <p>Contact: <b>{{$vendor->name}}</b> </p>
+        <p>Tel: <b>{{$vendor->tel}}</b></p>
+        <p>Email: <b>{{$vendor->email}}</b></p>
+        <p>Address: <b>{{$vendor->address}}</b></p>
     </div>
 
 </body>
