@@ -79,21 +79,33 @@ class UserController extends Controller
 
     function login(Request $request)
     {
-        $user= User::where('email', $request->email)->first();
-        // print_r($data);
-            if (!$user || $request->password != $user->password) {
-                return response([
-                    'message' => ['These credentials do not match our records.']
-                ], 404);
+        $col = User::all();
+        if($col->contains('email', $request->email)){
+            if($col->contains('password', $request->password)){
+                $data = $request->input();
+                $request->session()->put('user',$data['email']);
+                return view('welcome');
             }
-        
-             $token = $user->createToken('my-app-token')->plainTextToken;
-        
-            $response = [
-                'user' => $user,
-                'token' => $token
-            ];
-        
-             return response($response, 201);
+            return view('auth/login');
+        }
+        else{
+            return view('auth/login');
+        }
+    }
+
+    function signup(Request $request){
+        if($request->password == $request->confirm_password){
+            User::insert([
+                "firstname"=>$request->firstname,
+                "lastname"=>$request->lastname,
+                "email"=>$request->email,
+                "password"=>$request->password,
+                "tel"=>"0000"
+            ]);
+            return view('auth/login');
+        }
+        else{
+            return view('auth/signup');
+        }
     }
 }

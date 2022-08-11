@@ -19,7 +19,8 @@
             <div class="imagebox">
                 
             </div>
-            <form class="loginbox">
+            <form class="loginbox" action="getSignup" method="POST">
+                @csrf
                 <h2>Register Here</h2>
                 <div class="textfield">
                     <span class="material-icons">person</span>
@@ -39,7 +40,7 @@
                 </div>
                 <div class="textfield">
                     <span class="material-icons">password</span>
-                    <input type="password" placeholder="Enter Confirm Password..." name="confirm-password">
+                    <input type="password" placeholder="Enter Confirm Password..." name="confirm_password">
                 </div>
                 <button class="mybutton">Signup</button>
             </form>

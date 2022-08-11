@@ -1,5 +1,6 @@
 <?php
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 use App\Models\User;
 use App\Models\Book;
@@ -38,6 +39,8 @@ Route::get('/auth/signup', function () {
     return view('auth/signup');
 });
 
+Route::post("auth/verifyLogin", [UserController::class, 'login']);
+Route::post("auth/getSignup", [UserController::class, 'signup']);
 
 
 

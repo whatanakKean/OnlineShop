@@ -25,8 +25,8 @@
         <div class="profilebox">
           <img class="profile-image" src="{{ asset($profile) }}" alt={{ $name }}>
           <div class="profile-content">
-              <p>{{ $name }}</p>
-              <small>{{ $email }}</small>
+              <p>{{ session('user') }}</p>
+              <!-- <small>{{ session('user') }}</small> -->
           </div>
         </div>
       @else
